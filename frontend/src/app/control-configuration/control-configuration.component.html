@@ -1,0 +1,138 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="alert alert-color">
+            <h1 class="h1 text-center">Form Builder</h1>
+        </div>
+        <div class="container">
+            <div class="col-md-12">
+                <h1 class="h1">
+                    Configure controls
+                </h1>
+                <div class="form-group">
+                    <label for="formname">Form Name</label>
+                    <input type="text" id="formname" #formname>
+                </div>
+                <form class="table-responsive">
+                    <table class="table table-responsive table-striped table-hover" cellspacing="5">
+                        <thead>
+                            <tr>
+                                <th>Control id</th>
+                                <th>Label</th>
+                                <th>Type</th>
+                                <th>Is Visible?</th>
+                                <th>Is Read-only?</th>
+                                <th>Order</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Control 1</td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="label" [(ngModel)]="controllabelname1" (blur)="getcontrollabelValue($event.target.value)">
+                                    </div>
+                                </td>
+                                <td>
+                                    <select id="controltype1" [(ngModel)]="controltypeactive1" name="Select controltype" class="form-control" (ngModelChange)="getcontroltypeValue($event,'controltype1')"> 
+        									<option *ngFor="let n1 of controltype" [attr.value]="n1">{{n1}}</option>
+      								</select>
+                                </td>
+                                <td>
+                                    <label class="checkbox-inline">
+										<input type="checkbox" value="" name="isvisible" [(ngModel)]="isVisible1">
+										</label>
+                                </td>
+                                <td>
+                                    <label class="checkbox-inline">
+										<input type="checkbox" value="" name="isreadonly">
+										</label>
+                                </td>
+                                <td>
+                                    <select class="form-control" id="order">		<option>--Select--</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										
+									</select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Control 2</td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="label" [(ngModel)]="controllabelname2" (blur)="getcontrollabelValue($event.target.value)">
+                                    </div>
+                                </td>
+                                <td>
+                                    <select id="controltype2" [(ngModel)]="controltypeactive2" name="Select controltype" class="form-control" (ngModelChange)="getcontroltypeValue($event,'controltype2')"> 
+        									<option *ngFor="let n2 of controltype" [attr.value]="n2">{{n2}}</option>
+      								</select>
+
+
+                                </td>
+                                <td>
+                                    <label class="checkbox-inline">
+										<input type="checkbox" value="" name="isvisible" [(ngModel)]="isVisible2" (change)="getcontrollabelValue($event)">
+										</label>
+                                </td>
+                                <td>
+                                    <label class="checkbox-inline">
+										<input type="checkbox" value="" name="isreadonly">
+										</label>
+                                </td>
+                                <td>
+                                    <select class="form-control" id="order">		<option>--Select--</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										
+									</select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Control 3</td>
+                                <td>
+                                    <div class="form-group">
+                                        <input #label type="text" class="form-control" name="label" [(ngModel)]="controllabelname3" (blur)="getcontrollabelValue($event.target.value)">
+                                    </div>
+                                </td>
+                                <td>
+                                    <select id="controltype3" [(ngModel)]="controltypeactive3" name="Select controltype" class="form-control" (ngModelChange)="getcontroltypeValue($event,'controltype3')"> 
+        									<option *ngFor="let n3 of controltype" [attr.value]="n3">{{n3}}</option>
+      								</select>
+                                </td>
+                                <td>
+                                    <label class="checkbox-inline">
+										<input type="checkbox" value="" name="isvisible" [(ngModel)]="isVisible3">
+										</label>
+                                </td>
+                                <td>
+                                    <label class="checkbox-inline">
+										<input type="checkbox" value="" name="isreadonly">
+										</label>
+                                </td>
+                                <td>
+                                    <select class="form-control" id="order">		<option>--Select--</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										
+									</select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <input  class="btn btn-info alert-color" (click)="getcontrolSpecification(formname.value)" type="button" value="Create" />
+
+                    <button type="reset" class="btn btn-info alert-color">Clear</button>
+
+
+                </form>           
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="alert alert-color">
+            <h1 class="h1 text-center">Form Builder</h1>
+        </div>
+
+
+        <div class="container">
+            <div class="col-md-3">
+                <span>Select The form</span>
+                <select (change)="onChange(selectoperator.value)" class="selectpicker" #selectoperator name="Directory">
+                     <option value="{{item.Id}}" *ngFor="let item of listofforms">{{item.Name}}</option>
+                     </select>
+                <br><br><br><br>
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-md-3 labelbox">
+                <div *ngFor="let labelvalue of arrayforLabel">
+                    <div *ngIf="labelvalue !== ' ' && labelvalue !== undefined">
+                        <div class="form-group">
+                            <label>{{labelvalue}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 typebox">
+                <div *ngFor="let typevalue of arrayforType">
+                    <div *ngIf="typevalue === 'Textbox' ">
+                        <div class="form-group">
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+
+                    <div *ngIf="typevalue === 'Number' ">
+                        <div class="form-group">
+
+                            <input class="formcontrol" type="number" />
+                        </div>
+                    </div>
+
+                    <div *ngIf="typevalue === 'Dropdown' ">
+                        <div class="form-group">
+
+                            <select class="form-control">		
+                                <option>--Select--</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+										
+							</select>
+                        </div>
+                    </div>
+
+                    <div *ngIf="typevalue === 'Checkbox' ">
+                        <div class="form-group">
+
+                            <label class="checkbox-inline">
+                                <input class="form-control" type="checkbox" value="">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div *ngIf="typevalue === 'Textarea' ">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" cols="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
